@@ -98,17 +98,26 @@ void deletePos(Node *&head, int pos) {
 
 }
 
+void print_reverse(Node *head) {
+    if(head == NULL) {
+        return;
+    }
+    print_reverse(head->next);
+    cout << head->val << " ";
+}
+
 int main() {
     Node *head = NULL;
     insertTail(head, 10);
     insertTail(head, 20);
     insertTail(head, 30);
     printList(head);
+    print_reverse(head);
     // deleteHead(head);
     // printList(head);
     // deleteTail(head);
     // printList(head);
-    deletePos(head, 3);
-    printList(head);
+    //deletePos(head, 3);
+    // printList(head);
     return 0;
 }
