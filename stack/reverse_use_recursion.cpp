@@ -5,22 +5,16 @@ void reverseStack(stack<int> &s) {
     if (s.empty()) {
         return;
     }
-
     int x = s.top();
     s.pop();
-
     reverseStack(s);
-
     stack<int> newSt;
-
-    while (!s.empty()) {
+    while(!s.empty()) {
         newSt.push(s.top());
         s.pop();
     }
-
     s.push(x);
-
-    while (!newSt.empty()) {
+    while(!newSt.empty()) {
         s.push(newSt.top());
         newSt.pop();
     }
