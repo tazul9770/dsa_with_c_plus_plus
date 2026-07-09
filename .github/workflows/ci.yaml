@@ -1,0 +1,30 @@
+name: C++ DSA Continuous Integration(CI)
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Show g++ version
+      run: g++ --version
+
+    - name: Compile all C++ files
+      run: |
+        find . -name "*.cpp" | while read file
+        do
+          echo "Compiling $file"
+          g++ "$file" -o /tmp/output
+        done
+
+    - name: Success Message
+      run: echo "All C++ files compiled successfully"
