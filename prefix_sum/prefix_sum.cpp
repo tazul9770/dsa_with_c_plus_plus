@@ -27,6 +27,6 @@ int main() {
     } else {
         sum = pref[r] - pref[l-1];
     }
-    cout << "Final results: " << sum << endl;
+    cout << "Final results: " << sum << endl
     return 0;
 }
