@@ -30,6 +30,9 @@ This repository contains code that I practiced and implemented while learning **
 - [x] Sorting Algorithms (Bubble, Selection, Insertion, Merge, Quick)
 - [x] Trees (Binary Tree, BST, AVL)
 - [x] Graphs (BFS, DFS, Dijkstra)
+- [x] Bellman Ford and Floyd Warshall 
+- [x] Disjoint set
+- [x] 0, 1 knapsack
 - [x] Hashing
 - [x] Dynamic Programming
 - [x] Heap / Priority Queue
