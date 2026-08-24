@@ -22,7 +22,7 @@ This repository contains code that I practiced and implemented while learning **
 
 - [x] Arrays
 - [x] Strings
-- [x] Linked List (Singly, Doubly, Circular)
+- [x] Linked List (Singly, Doubly)
 - [x] Stack
 - [x] Queue
 - [x] Recursion & Backtracking
