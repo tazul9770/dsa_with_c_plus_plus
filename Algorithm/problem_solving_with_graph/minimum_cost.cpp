@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 1e5;
+const int N = 1e5+5;
 int par[N];
 int sz[N];
 
@@ -26,10 +26,10 @@ void dsu_union_by_size(int node1, int node2) {
     int leaderB = dsu_find(node2);
     if(sz[leaderA] >= sz[leaderB]) {
         par[leaderB] = leaderA;
-        sz[leaderA] += sz[leaderB];
+        sz[leaderA] += leaderB;
     } else {
         par[leaderA] = leaderB;
-        sz[leaderB] += sz[leaderA];
+        sz[leaderB] += leaderA;
     }
 }
 
@@ -53,19 +53,17 @@ int main() {
     dsu_initialize(n);
     vector<Edge> edgeList;
     while(e--) {
-        int u, v, c;
-        cin >> u >> v >> c;
-        edgeList.push_back(Edge(u, v, c));
+        int a, b, c;
+        cin >> a >> b >> c;
+        edgeList.push_back(Edge(a, b, c));
     }
-
     sort(edgeList.begin(), edgeList.end(), cmp);
-
     int totalCost = 0;
 
     for(Edge ed : edgeList) {
-        int leader1 = dsu_find(ed.u);
-        int leader2 = dsu_find(ed.v);
-        if(leader1 == leader2) {
+        int leaderA = dsu_find(ed.u);
+        int leaderB = dsu_find(ed.v);
+        if(leaderA == leaderB) {
             continue;
         } else {
             dsu_union_by_size(ed.u, ed.v);
@@ -74,6 +72,6 @@ int main() {
     }
 
     cout << totalCost << endl;
-
+    
     return 0;
 }
